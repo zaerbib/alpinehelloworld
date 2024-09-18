@@ -2,7 +2,11 @@
 FROM alpine:latest
 
 # Install python and pip
-RUN apk update && apk add --no-cache python3 py3-pip
+RUN apk update && apk add --no-cache python3
+RUN apt-get update && \
+    apt-get install -y python3-pip && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 ADD ./webapp/requirements.txt /tmp/requirements.txt
 
 # Install dependencies
