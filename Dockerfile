@@ -8,7 +8,7 @@ RUN apk update && \
 ADD ./webapp/requirements.txt /tmp/requirements.txt
 
 # Install dependencies
-RUN pip3 install --no-cache-dir -r /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
 # Add our code
 ADD ./webapp /opt/webapp/
