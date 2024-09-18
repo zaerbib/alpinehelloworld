@@ -4,7 +4,7 @@ FROM alpine:latest
 # Install python and pip
 RUN apk update && apk add --no-cache python3
 RUN apk update && \
-    apk add --no-cache python3-pip && \
+    apk add --no-cache py3-pip && \
     apk clean && \
     rm -rf /var/lib/apt/lists/*
 ADD ./webapp/requirements.txt /tmp/requirements.txt
